@@ -1,0 +1,20 @@
+CREATE DATABASE exammd4;
+use exammd4;
+
+
+CREATE TABLE product (
+  id BIGINT PRIMARY KEY AUTO_INCREMENT,
+  description TEXT,
+  image_url VARCHAR(255),
+  name VARCHAR(255),
+  price DOUBLE,
+  status BIT(1),
+  catalogId INT,
+  FOREIGN KEY (catalogId) REFERENCES catalog(id)
+);
+
+CREATE TABLE catalog (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  name VARCHAR(100),
+  description TEXT
+);
